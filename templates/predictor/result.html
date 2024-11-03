@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Container Styling */
+        .container {
+            background: rgba(40, 40, 50, 0.9);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            max-width: 400px;
+            border: 1px solid #ff79c6;
+            animation: slideIn 1s ease;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 1.5rem;
+            color: #ff79c6;
+            text-shadow: 0px 5px 15px rgba(255, 121, 198, 0.6);
+        }
+
+        /* Prediction Text */
+        p {
+            font-size: 1.4rem;
+            color: #f8f8f2;
+            margin-bottom: 2rem;
+        }
+
+        strong {
+            font-size: 1.8rem;
+            color: #50fa7b;
+            text-shadow: 0 0 8px #50fa7b;
+            font-weight: bold;
+        }
+
+        /* Button Styling */
+        a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #ff79c6;
+            color: #282a36;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 8px 15px rgba(255, 121, 198, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s ease;
+        }
+
+        a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 121, 198, 0.6);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>The predicted animal is: <strong>{{ prediction }}</strong></p>
+        <a href="{% url 'predict' %}">Make Another Prediction</a>
+    </div>
+</body>
+</html>
